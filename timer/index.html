@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reptilianism.org</title>
-  <link rel="stylesheet" href="htpps://reptilianism.org/styles.css">
-  <link rel="icon" type="image/x-icon" href="/assets/favicon.webp">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reptilianism.org</title>
+    <link rel="stylesheet" href="htpps://reptilianism.org/styles.css">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.webp">
 </head>
 
 <body>
-
     <div id="banner">
         <p id="logo">🦎</p><br>
         <div id="site-header">
@@ -23,11 +22,33 @@
             <tr>
                 <td><a href="/">Home</a></td>
                 <td><a href="/timer/">Snail Racing Timer</a></td>
-                <td><a href="/news/">Very Real News</a></td>
+                <td><a href="/assets/building.html">Very Real News</a></td>
                 <td><a href="/wrongness/">Original Site</a></td>
                 <td><a href="https://anarchist.engineer/">About the Author</a></td>
             </tr>
         </table>
+    </div>
+
+    <div id="race-controls">
+        <form id="time">
+          <label for="time">Minutes:</label>
+          <input name="time" type="number" min="0"/>
+        </form>
+        <button id="start" type="button">
+          START RACE
+        </button>
+        <button id="pause-resume" type="button">
+          PAUSE
+        </button>
+    </div>
+
+    <div id="canvas-container">
+        <canvas id="canvas" width="1920" height="1080">
+            <img id="green_snail" src="/assets/green_snail.png" width="150" height="150"/>
+            <img id="blue_snail" src="/assets/blue_snail.png" width="150" height="150"/>
+            <img id="yellow_snail" src="/assets/yellow_snail.png" width="150" height="150"/>
+            <img id="purple_snail" src="/assets/purple_snail.png" width="150" height="150"/>
+        </canvas>
     </div>
 
 </body>

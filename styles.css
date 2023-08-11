@@ -69,3 +69,11 @@ a:hover {
     text-decoration: underline;
 }
 
+#race-controls {
+    border: 2px solid white;
+    padding: 0.25em;
+}
+
+#canvas-container {
+    max-width: max-content;
+}
