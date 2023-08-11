@@ -1,0 +1,25 @@
+# Reptilianism: A Study in Wrongness
+
+March 30th, 2023 C.E.
+
+## The Fallacy
+
+In class, you stated that a .org top-level domain afforded a level of credibility above that of the .com. When I spoke to the contrary, I was not only booed, but you made the unsubstantiated claim that .org domains required certification of one's status as a non-profit organization. A student then made a web search to support the discussion (while not utilizing the information-vetting strategies you had just taught) and incorrectly stated that .org domains did require verification. This is clearly wrong, as I have acquired a .org domain without any verification. All I needed was a PayPal account.
+
+## The Process
+
+1. I checked for my domain of choice on [Porkbun](https://porkbun.com/), a popular, affordable domain registrar. ![An image of the .org's availability on a domain registrar.](image_1.png)
+2. I purchased the domain. ![An image of me purchasing the domain.](image_2.png)
+3. To secure the site and speed up loading, I set the nameservers to CloudFlare nameservers to make use of CloudFlare's DDoS protection and content distribution system, respectively. ![An image of me changing the nameservers in Porkbun's control panel.](image_3.png)
+![An image of the CloudFlare dashboard for this domain.](image_4.png)
+4. I wrote this page in [Markdown](https://en.wikipedia.org/wiki/Markdown) and used [Sphinx](https://www.sphinx-doc.org/en/master/index.html) to convert it to [HTML](https://en.wikipedia.org/wiki/HTML). ![An image of me writing this website.](image_5.png)
+5. I hosted this on my server and set CloudFlare to forward the content of my webserver to this domain. (No image this time because it's mostly just editing configuration files).
+6. That was it. Those were all the steps.
+
+## Addressing a Possible Counterargument
+
+One might say that all this requires an awful amount of tech-savviness and expertise, but the reality is that anyone with Google, common sense, and $7.49 in digitally supported money can do it.
+
+## The Exigence
+
+Pure, unbridled spite and a passion for facts.
