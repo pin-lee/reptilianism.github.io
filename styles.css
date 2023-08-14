@@ -4,14 +4,14 @@
 :root {
     background-color: #05503c;
     color: white;
+}
+
+body {
     margin: 0px auto;
     max-width: 800px;
     line-height:1.6;
     font-size:18px;
     padding:010px;
-}
-
-body {
     font-family: 'Roboto';
     font-weight: 400;
 }
@@ -69,11 +69,17 @@ a:hover {
     text-decoration: underline;
 }
 
-#race-controls {
+#timer-system {
     border: 2px solid white;
     padding: 0.25em;
+    align-items: center;
 }
 
 #canvas-container {
-    max-width: max-content;
+    max-width: 900px;
+    float: left;
+}
+
+#timer {
+    padding: 0.5em;
 }

@@ -29,27 +29,29 @@
         </table>
     </div>
 
-    <div id="race-controls">
-        <form id="time">
-          <label for="time">Minutes:</label>
-          <input name="time" type="number" min="0"/>
-        </form>
-        <button id="start" type="button">
-          START RACE
-        </button>
-        <button id="pause-resume" type="button">
-          PAUSE
-        </button>
+    <div id="timer-system">
+        <div id="race-controls">
+            <form id="time">
+            <label for="time">Minutes:</label>
+            <input name="time" type="number" min="0"/>
+            </form>
+            <button id="start" type="button">
+            START RACE
+            </button>
+            <button id="pause-resume" type="button">
+            PAUSE
+            </button>
+        </div>
+        <div id="timer">
+            <p>TIME</p>
+        </div>
     </div>
-
-    <div id="canvas-container">
-        <canvas id="canvas" width="1920" height="1080">
-            
-        </canvas>
-    </div>
-
-    <script src="index.js"></script>
 
 </body>
+
+<div id="canvas-container">
+    <canvas id="canvas" width="1920" height="1080"></canvas>
+    <script src="index.js"></script>
+</div>
 
 </html>

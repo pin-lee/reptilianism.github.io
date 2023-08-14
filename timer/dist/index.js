@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -37,14 +38,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 window.onload = function () {
     return __awaiter(this, void 0, void 0, function () {
         function render() {
-            context.fillStyle = "rgb(184, 115, 51)";
-            context.fillRect(0, 0, 800, 450);
-            context.fillStyle = "rgb(135, 206, 235)";
-            context.fillRect(0, 0, 800, 75);
+            //context.fillRect(10, 10, 150, 100);
             for (var i = 0; i < snail_sprites.length; i++) {
-                context.drawImage(snail_sprites[i], snail_x_positions[i], snail_y_positions[i], 110, 100);
-                console.log("RENDERED");
+                context.drawImage(snail_sprites[i], snail_x_positions[i], snail_y_positions[i]);
             }
+            console.log("RENDERED   ");
         }
         var canvas, context, colors, snail_sprites, _i, colors_1, color, sprite, snail_x_positions, snail_y_positions;
         return __generator(this, function (_a) {
@@ -72,10 +70,11 @@ window.onload = function () {
                     return [3 /*break*/, 1];
                 case 4:
                     snail_x_positions = [0, 0, 0, 0];
-                    snail_y_positions = [25, 120, 215, 310];
+                    snail_y_positions = [100, 200, 300, 400];
                     render();
                     return [2 /*return*/];
             }
         });
     });
 };
+//# sourceMappingURL=index.js.map
