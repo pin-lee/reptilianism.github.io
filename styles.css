@@ -17,7 +17,7 @@ body {
 }
 
 #logo {
-    font-size: 275%;
+    font-size: 350%;
     display: flex;
     float: left;
     align-items: middle;
@@ -54,11 +54,11 @@ body {
 }
 
 h1 {
-    font-weight: 700;
+    font-size: 250%;
 }
 
 h2 {
-    font-weight: 600;
+    line-height: 30px;
 }
 
 a {
@@ -78,8 +78,4 @@ a:hover {
 #canvas-container {
     max-width: 900px;
     float: left;
-}
-
-#timer {
-    padding: 0.5em;
 }

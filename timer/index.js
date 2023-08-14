@@ -13,7 +13,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+        while (_) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -34,26 +34,83 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var _a;
+var State;
+(function (State) {
+    State[State["Clear"] = 0] = "Clear";
+    State[State["Running"] = 1] = "Running";
+    State[State["Paused"] = 2] = "Paused";
+})(State || (State = {}));
+var snail_sprites = [];
+var canvas_width = 800;
+var canvas_height = 450;
+var snail_y_offset = 25;
+var snail_buffer_distance = 95;
+var snail_x_positions = [0, 0, 0, 0];
+var snail_y_positions = [
+    snail_y_offset + snail_buffer_distance * 0,
+    snail_y_offset + snail_buffer_distance * 1,
+    snail_y_offset + snail_buffer_distance * 2,
+    snail_y_offset + snail_buffer_distance * 3
+];
+var canvas;
+var context;
+function render() {
+    context.fillStyle = "rgb(184, 115, 51)";
+    context.fillRect(0, 0, canvas_width, canvas_height);
+    context.fillStyle = "rgb(135, 206, 235)";
+    context.fillRect(0, 0, canvas_width, 75);
+    for (var i = 0; i < snail_sprites.length; i++) {
+        context.drawImage(snail_sprites[i], snail_x_positions[i], snail_y_positions[i], 110, 100);
+        console.log("RENDERED");
+    }
+}
+function update_snail(snail_index) {
+    var snail_to_update = Math.floor(Math.random() * snail_x_positions.length);
+    var distance_to_send_snail = Math.floor(Math.random() * 2 - 1);
+}
+var global_state = State.Clear;
+var duration;
+var time = (_a = document.getElementById("race-controls")) === null || _a === void 0 ? void 0 : _a.innerHTML;
+var start;
+function main() {
+    return __awaiter(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (global_state) {
+                case State.Clear:
+                    break;
+                case State.Paused:
+                    break;
+                case State.Running:
+                    render();
+                    setInterval(function () {
+                        var delta = Date.now() - start;
+                        console.log(Math.floor(delta / 1000));
+                        time.innerHTML = "".concat(duration - delta);
+                    }, 1000);
+                    break;
+            }
+            requestAnimationFrame(main);
+            return [2 /*return*/];
+        });
+    });
+}
+var time_form = document.getElementById("time-form");
+var start_button = document.getElementById("start");
+start_button.addEventListener("click", function () {
+    global_state = State.Running;
+    duration = +time_form.value;
+    start = Date.now();
+});
 window.onload = function () {
     return __awaiter(this, void 0, void 0, function () {
-        function render() {
-            context.fillStyle = "rgb(184, 115, 51)";
-            context.fillRect(0, 0, 800, 450);
-            context.fillStyle = "rgb(135, 206, 235)";
-            context.fillRect(0, 0, 800, 75);
-            for (var i = 0; i < snail_sprites.length; i++) {
-                context.drawImage(snail_sprites[i], snail_x_positions[i], snail_y_positions[i], 110, 100);
-                console.log("RENDERED");
-            }
-        }
-        var canvas, context, colors, snail_sprites, _i, colors_1, color, sprite, snail_x_positions, snail_y_positions;
+        var colors, _i, colors_1, color, sprite;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     canvas = document.getElementById("canvas");
                     context = canvas.getContext("2d");
                     colors = ["green", "blue", "yellow", "purple"];
-                    snail_sprites = [];
                     _i = 0, colors_1 = colors;
                     _a.label = 1;
                 case 1:
@@ -71,9 +128,8 @@ window.onload = function () {
                     _i++;
                     return [3 /*break*/, 1];
                 case 4:
-                    snail_x_positions = [0, 0, 0, 0];
-                    snail_y_positions = [25, 120, 215, 310];
                     render();
+                    requestAnimationFrame(main);
                     return [2 /*return*/];
             }
         });
