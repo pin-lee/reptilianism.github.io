@@ -70,9 +70,22 @@ a:hover {
 }
 
 #timer-system {
+    display: flex;
+    align-items: center;
     border: 2px solid white;
     padding: 0.25em;
-    align-items: center;
+  }
+  
+#race-controls {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+}
+  
+#timer {
+    margin-left: 20px;
+    align-content: center;
 }
 
 #canvas-container {
