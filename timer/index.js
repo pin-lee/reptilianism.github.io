@@ -107,9 +107,9 @@ function render() {
 }
 function update_snail() {
     var duration = (global_time_remaining === 0) ? parseInt(time_form.value) * 60 : global_time_remaining;
-    var rate = Math.floor(canvas_width / duration);
+    var rate = Math.round(canvas_width / duration);
     var snail_to_update = Math.round(Math.random() * snail_x_positions.length);
-    var distance_to_send_snail = (Math.random() * rate - 1);
+    var distance_to_send_snail = rate;
     snail_x_positions[snail_to_update] += distance_to_send_snail;
 }
 function win(winner_index) {

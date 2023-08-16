@@ -61,10 +61,10 @@ function render() {
 
 function update_snail() {
     let duration = (global_time_remaining === 0) ? parseInt(time_form.value) * 60 : global_time_remaining;
-    const rate = Math.floor(canvas_width / duration);
+    const rate = Math.round(canvas_width / duration);
 
     const snail_to_update = Math.round(Math.random() * snail_x_positions.length);
-    const distance_to_send_snail = (Math.random()*rate-1);
+    const distance_to_send_snail = rate;
     snail_x_positions[snail_to_update] += distance_to_send_snail;
 }
 
